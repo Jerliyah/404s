@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>404 - 1</title>
+</head>
+
+<!-- General Style -->
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+    }
+
+    body * {
+        box-sizing: border-box;
+    }
+
+    #j-page {
+        height: 100vh;
+        background: url('broken_noise.png'), black;
+        display: flex;
+        flex-direction: column;
+        font-family: sans-serif;
+    }
+
+    /* ------------------------------------- */
+    .light-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+    }
+
+        .string {
+            height: 40vh;
+            width: 5px;
+            background: gray;
+        }
+
+        .light-base {
+            height: 20px;
+            width: 20px;
+            border-radius: 100% 100% 0 0;
+            background: #33334d;
+        }
+
+        .light {
+            height: 60px;
+            width: 50px;
+            margin-top: -5px;
+            border-radius: 2em;
+            background: #ffff80;
+            box-shadow: 0 0 20px #ffffcc;
+            transition: box-shadow 0.5s;
+        }
+        .light:hover {
+            box-shadow: 0 0 40px #ffffcc;
+        }
+        /* ------------------------------------ */
+        .number-container {
+            text-align: center;
+            margin-top: -65px;
+            z-index: 1;
+        }
+
+            .four {
+                font-size: 72px;
+                display: inline-block;
+            }
+
+            .first.four {
+                margin-right: 1em;
+                background: linear-gradient(to left, #ffffcc, black);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .second.four {
+                background: linear-gradient(to right, #ffffcc, black);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        /* ------------------------------------ */
+        .text-container {
+            text-align: center;
+            font-weight: bold;
+        }
+            .text-container > p {
+                background: linear-gradient(#ffffcc, black);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+        /* ------------------------------------ */
+        .directions {
+            position: absolute;
+            color: gray;
+            padding-left: 1em;
+        }
+        
+</style>
+
+<!-- Animation -->
+<style>
+
+</style>
+
+<body>
+    <div id="j-page">
+
+        <div class="light-container">
+            <div class="string"></div>
+            <div class="light-base"></div>
+            <div class="light"></div>
+        </div>
+
+        <div class="number-container">
+            <div class="first four">4</div>
+            <div class="second four">4</div>
+        </div>
+
+        <div class="text-container">
+            <p>Nothing Here</p>
+        </div>
+
+        <p class="directions">Click the bulb to go back</p>
+
+    </div>
+</body>
+
+<script>
+    let light = document.querySelector('.light')
+    light.addEventListener('click', () => {
+        window.history.back()
+    })
+</script>
+
+</html>
